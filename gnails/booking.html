@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Запись на сеанс — G. nAilS</title>
+  <meta name="description" content="Онлайн-запись на маникюр к мастеру G. nAilS.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/booking.css">
+  <link rel="stylesheet" href="css/calendar.css">
+</head>
+<body class="page page--booking page--fit">
+  <header class="header" id="header">
+    <p class="header__tagline">YOUR HANDS - MY ART</p>
+    <a class="header__logo" href="index.html" aria-label="G. nAilS — на главную"><img src="img/logo.png" alt="G. nAilS" width="208" height="56"></a>
+    <nav class="header__nav" aria-label="Основная навигация">
+      <a class="header__link" href="index.html">Главная</a>
+      <a class="header__link" href="album.html">Альбом</a>
+      <a class="header__link" href="booking.html" aria-current="page">Запись</a>
+    </nav>
+  </header>
+
+  <main class="booking">
+    <h1 class="booking__title">ЗАПИСЬ НА СЕАНС</h1>
+
+    <section class="booking__panel">
+      <form class="booking__form" id="booking-form" novalidate>
+        <div class="field">
+          <label class="visually-hidden" for="name">ФИО</label>
+          <input class="field__control" id="name" name="name" type="text" placeholder="ФИО" autocomplete="name" maxlength="80" required>
+          <p class="field__error" data-error-for="name" role="alert"></p>
+        </div>
+
+        <div class="field field--picker" data-picker>
+          <label class="visually-hidden" for="slot-display">Желаемые дата и время</label>
+          <input class="field__control" id="slot-display" type="text" readonly placeholder="ЖЕЛАЕМЫЕ ДАТА И ВРЕМЯ" autocomplete="off" aria-haspopup="dialog" aria-expanded="false" aria-controls="slot-popover" data-picker-display>
+          <input type="hidden" name="slot" data-picker-value>
+          <button class="field__dots" type="button" aria-label="Открыть календарь" aria-haspopup="dialog" aria-expanded="false" aria-controls="slot-popover" data-picker-toggle><span></span><span></span><span></span></button>
+          <div class="picker__popover" id="slot-popover" role="dialog" aria-label="Выбор даты и времени" hidden data-picker-popover>
+            <div data-picker-calendar></div>
+          </div>
+          <p class="field__error" data-error-for="slot" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label class="visually-hidden" for="phone">Номер телефона</label>
+          <input class="field__control" id="phone" name="phone" type="tel" placeholder="НОМЕР ТЕЛЕФОНА" autocomplete="tel" maxlength="30" required>
+          <p class="field__error" data-error-for="phone" role="alert"></p>
+        </div>
+
+        <button class="booking__submit" type="submit">ЗАПИСЬ</button>
+        <p class="booking__status" data-form-status role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="footer__link" href="https://t.me/ded_Sosun" target="_blank" rel="noopener">TG</a>
+  </footer>
+  <dialog class="modal" id="success-dialog" aria-labelledby="success-title">
+    <div class="modal__box">
+      <h2 class="modal__title" id="success-title">Ваша запись прошла успешно!</h2>
+      <p class="modal__text">Мы свяжемся с Вами в ближайшее время для уточнения деталей. Благодарим, что выбрали именно нас!</p>
+      <button class="modal__button" type="button" data-modal-close>ОК</button>
+    </div>
+  </dialog>
+
+  <script type="module" src="js/pages/booking.js"></script>
+</body>
+</html>

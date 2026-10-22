@@ -1,0 +1,13 @@
+{
+  "name": "g-nails",
+  "version": "1.0.0",
+  "description": "G. nAilS — сайт мастера маникюра с системой онлайн-записи",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

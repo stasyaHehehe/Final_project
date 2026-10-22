@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>G. nAilS — маникюр на ваш вкус</title>
+  <meta name="description" content="G. nAilS — мастер маникюра. Работы любой сложности, онлайн-запись на удобное время.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/calendar.css">
+</head>
+<body class="page page--home">
+  <header class="header header--overlay" id="header">
+    <p class="header__tagline">YOUR HANDS - MY ART</p>
+    <a class="header__logo" href="index.html" aria-label="G. nAilS — на главную"><img src="img/logo.png" alt="G. nAilS" width="208" height="56"></a>
+    <nav class="header__nav" aria-label="Основная навигация">
+      <a class="header__link" href="index.html" aria-current="page">Главная</a>
+      <a class="header__link" href="album.html">Альбом</a>
+      <a class="header__link" href="booking.html">Запись</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+            <h1 class="hero__title"><span class="hero__title-dark">Your Nails</span> <span class="hero__title-light">Your Rules</span></h1>
+      <div class="hero__actions">
+        <a class="btn btn--light" href="album.html"><span class="btn__label btn__label--underline">СМОТРЕТЬ БОЛЬШЕ</span></a>
+        <a class="btn btn--dark" href="booking.html"><span class="btn__label">ЗАПИСАТЬСЯ</span></a>
+      </div>
+      <img class="hero__photo" src="img/hero.jpg" alt="Руки с длинным чёрным маникюром" width="1288" height="1116">
+    </section>
+
+    <section class="works" aria-labelledby="works-title">
+      <div class="works__frame">
+        <img class="works__photo works__photo--left" src="img/work-1.jpg" alt="Тёмный маникюр на длинных ногтях" width="632" height="233" loading="lazy">
+        <img class="works__photo works__photo--right" src="img/work-2.jpg" alt="Нюдовый маникюр со звёздочками" width="500" height="233" loading="lazy">
+      </div>
+      <div class="works__text">
+        <h2 class="works__title" id="works-title">РАБОТЫ ЛЮБОЙ СЛОЖНОСТИ</h2>
+        <p class="works__subtitle">ВСЕ ЗАВИСИТ ТОЛЬКО ЛИШЬ ОТ ВАШИХ ПОЖЕЛАНИЙ</p>
+      </div>
+    </section>
+
+    <section class="master">
+      <img class="master__photo" src="img/master.jpg" alt="Мастер Анастасия" width="1920" height="750" loading="lazy">
+      <p class="master__slogan">
+        <span class="master__line master__line--1">NEW VISION</span>
+        <span class="master__line master__line--2">OF YOUR</span>
+        <span class="master__line master__line--3">NAIL</span>
+        <span class="master__line master__line--4">BEAUTY</span>
+      </p>
+      <p class="master__name">МАСТЕР АНАСТАСИЯ</p>
+    </section>
+
+    <section class="contacts">
+      <div class="contacts__info">
+        <h2 class="contacts__title">НАШИ КОНТАКТЫ ДЛЯ СВЯЗИ</h2>
+        <p class="contacts__line">Номер телефона: <a href="tel:+79000000000">8(900) 000-00-00</a></p>
+        <p class="contacts__line">Почта: <a href="mailto:G.nAilS@gmail.com">G.nAilS@gmail.com</a></p>
+      </div>
+      <img class="contacts__photo" src="img/contacts.jpg" alt="Нежный маникюр с мраморным дизайном" width="955" height="250" loading="lazy">
+    </section>
+
+    <section class="moment" id="moment" aria-labelledby="moment-title">
+      <h2 class="moment__title" id="moment-title">ТВОЙ МОМЕНТ</h2>
+      <p class="moment__subtitle">Можете выбрать подходящую для вас дату и время</p>
+      <div class="moment__panel">
+        <div class="calendar" id="calendar">
+          <p class="calendar__loading">Загружаем свободное время…</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="footer__link" href="https://t.me/ded_Sosun" target="_blank" rel="noopener">TG</a>
+    
+  </footer>
+  <script type="module" src="js/pages/home.js"></script>
+</body>
+</html>

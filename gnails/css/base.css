@@ -1,0 +1,357 @@
+/* Общие стили. 
+*/
+:root {
+  /* 1 px макета (ширина 1920) в текущем окне. Все размеры ниже: calc(N * var(--px)) */
+  --px: calc(min(100vw, 1920px) / 1920);
+  /* Масштаб страниц «Альбом» и «Запись» (по ширине и высоте окна) */
+  --fit-px: calc(max(0.4px, min(100vw, 1920px, 100vh * 1.19) / 1920));
+
+  --bg: #e7e7e7;
+  --bg-mid: #d9d9d9;
+  --bg-footer: #d0d0d0;
+  --ink: #000;
+  --light: #e7e7e7;
+  --band: #2b2b2b;
+  --muted: #a4a4a4;
+
+  --font: 'Ubuntu', 'Trebuchet MS', 'Segoe UI', Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  font-weight: 400;
+  line-height: 1;
+  overflow-x: hidden;
+}
+
+.page {
+  --pad: calc(172 * var(--px));    
+  --header-h: calc(171 * var(--px)); 
+  --footer-h: calc(85 * var(--px)); 
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1920px;
+  margin: 0 auto;
+  background: var(--bg);
+}
+
+.page > main {
+  flex: 1 0 auto;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  font-weight: inherit;
+}
+
+:focus-visible {
+  outline: calc(3 * var(--px)) solid #7a7a7a;
+  outline-offset: calc(3 * var(--px));
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Шапка (закреплена сверху) ---------- */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: 632fr 1288fr;
+  height: var(--header-h);
+  transition: height 0.25s ease;
+}
+
+.header::before,
+.header::after {
+  content: '';
+  grid-row: 1;
+  transition: background-color 0.25s ease;
+}
+
+.header::before {
+  grid-column: 1;
+  background: var(--bg);
+}
+
+.header::after {
+  grid-column: 2;
+  background: #000;
+}
+
+.header__tagline {
+  position: absolute;
+  top: 50%;
+  left: var(--pad);
+  z-index: 1;
+  transform: translateY(-50%);
+  font-size: calc(26 * var(--px));
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.header__logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  display: block;
+  width: calc(208 * var(--px));
+  transform: translate(-50%, -50%);
+  transition: width 0.25s ease;
+}
+
+.header__logo img {
+  width: 100%;
+  height: auto;
+}
+
+.header__nav {
+  position: absolute;
+  top: 50%;
+  right: var(--pad);
+  z-index: 1;
+  display: flex;
+  gap: calc(56 * var(--px));
+  transform: translateY(-50%);
+}
+
+.header__link {
+  padding: calc(6 * var(--px)) 0;
+  border-bottom: calc(2 * var(--px)) solid transparent;
+  color: var(--light);
+  font-size: calc(24 * var(--px));
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.header__link:hover {
+  border-bottom-color: #8a8a8a;
+}
+
+.header__link[aria-current='page'] {
+  border-bottom-color: var(--light);
+}
+
+.header--overlay {
+  margin-bottom: calc(-1 * var(--header-h));
+}
+
+.header--overlay::after {
+  background: transparent;
+}
+
+
+.header.is-stuck {
+  height: calc(96 * var(--px));
+}
+
+.header.is-stuck::after {
+  background: #000;
+}
+
+.header.is-stuck .header__logo {
+  width: calc(150 * var(--px));
+}
+
+/* ---------- Подвал ---------- */
+
+.footer {
+  display: flex;
+  align-items: center;
+  height: var(--footer-h);
+  padding-left: var(--pad);
+  background: var(--bg-footer);
+}
+
+.footer__link {
+  font-size: calc(32 * var(--px));
+  text-decoration: none;
+}
+
+.footer__link:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Кнопки ---------- */
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(387 * var(--px));
+  height: calc(107 * var(--px));
+  text-decoration: none;
+  transition: filter 0.2s ease;
+}
+
+.btn:hover {
+  filter: brightness(0.93);
+}
+
+.btn--light {
+  background: #e0e0e0;
+  color: #000;
+}
+
+.btn--dark {
+  background: #000;
+  color: var(--light);
+}
+
+.btn--dark:hover {
+  filter: brightness(1.8);
+}
+
+.btn__label {
+  font-size: calc(23 * var(--px));
+}
+
+.btn--light .btn__label {
+  font-size: calc(26 * var(--px));
+}
+
+.btn__label--underline {
+  padding-bottom: calc(10 * var(--px));
+  border-bottom: 1px solid currentColor;
+}
+
+.page--fit {
+  --px: var(--fit-px);
+}
+
+.page--fit .header__link {
+  font-size: calc(30 * var(--px));
+}
+
+.page--fit .header__nav {
+  gap: calc(64 * var(--px));
+}
+
+@media (min-width: 801px) {
+  .page--home .footer {
+    height: calc(82 * var(--fit-px));
+  }
+
+  .page--home .footer__link {
+    font-size: calc(32 * var(--fit-px));
+  }
+}
+
+/* ---------- Мобильная раскладка ---------- */
+
+@media (max-width: 800px) {
+  .page,
+  .page--fit {
+    --px: 1px;
+    --pad: 20px;
+    --header-h: 100px;
+    --footer-h: 64px;
+  }
+
+  .header,
+  .header.is-stuck {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 56px 44px;
+    height: auto;
+  }
+
+  .header--overlay {
+    margin-bottom: 0;
+  }
+
+  .header--overlay::after {
+    background: #000;
+  }
+
+  .header__tagline {
+    top: 28px;
+    left: 16px;
+    max-width: 42%;
+    font-size: 11px;
+    line-height: 1.25;
+    white-space: normal;
+  }
+
+  .header__logo,
+  .header.is-stuck .header__logo {
+    top: 28px;
+    left: auto;
+    right: 16px;
+    width: 104px;
+    transform: translateY(-50%);
+  }
+
+  .header__nav {
+    position: static;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0;
+    padding: 0 12px;
+    background: #000;
+    border-top: 1px solid #2b2b2b;
+    transform: none;
+  }
+
+  .header__link {
+    font-size: 14px;
+  }
+
+  .footer__link {
+    font-size: 18px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 320px;
+    height: 56px;
+  }
+
+  .btn__label,
+  .btn--light .btn__label {
+    font-size: 15px;
+  }
+}

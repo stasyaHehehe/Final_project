@@ -1,0 +1,384 @@
+/* Главная страница */
+
+/* ---------- Первый экран ---------- */
+
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 632fr 1288fr;
+  height: calc(1116 * var(--px));
+  overflow: hidden;
+}
+
+.hero__photo {
+  grid-column: 2;
+  grid-row: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__title {
+  position: absolute;
+  top: calc(382 * var(--px));
+  left: var(--pad);
+  z-index: 2;
+  font-size: calc(96 * var(--px));
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.hero__title-dark {
+  color: #000;
+}
+
+.hero__title-light {
+  color: var(--light);
+}
+
+.hero__actions {
+  position: absolute;
+  top: calc(711 * var(--px));
+  left: var(--pad);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: calc(42 * var(--px));
+}
+
+/* ---------- «Работы любой сложности» ---------- */
+
+.works {
+  position: relative;
+  height: calc(350 * var(--px));
+  background: var(--band);
+  color: #dadada;
+}
+
+.works__frame {
+  position: absolute;
+  top: calc(46 * var(--px));
+  left: 0;
+  display: flex;
+  width: calc(1144 * var(--px));
+  height: calc(256 * var(--px));
+  padding: calc(12 * var(--px)) calc(12 * var(--px)) calc(12 * var(--px)) 0;
+  background: #dadada;
+}
+
+.works__photo {
+  height: 100%;
+  object-fit: cover;
+}
+
+.works__photo--left {
+  width: calc(632 * var(--px));
+}
+
+.works__photo--right {
+  width: calc(500 * var(--px));
+}
+
+.works__text {
+  position: absolute;
+  top: calc(123 * var(--px));
+  left: calc(1279 * var(--px));
+}
+
+.works__title {
+  font-size: calc(35 * var(--px));
+  font-weight: 300;
+  white-space: nowrap;
+}
+
+.works__subtitle {
+  margin-top: calc(21 * var(--px));
+  font-size: calc(20 * var(--px));
+  font-weight: 300;
+  white-space: nowrap;
+}
+
+/* ---------- Мастер ---------- */
+
+.master {
+  position: relative;
+  height: calc(750 * var(--px));
+  background: #505050;
+  color: #dadada;
+  overflow: hidden;
+}
+
+.master__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.master__slogan {
+  position: absolute;
+  top: calc(40 * var(--px));
+  left: var(--pad);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.master__line {
+  display: block;
+  white-space: nowrap;
+}
+
+.master__line--1 {
+  font-size: calc(48 * var(--px));
+  font-weight: 300;
+}
+
+.master__line--2 {
+  margin-top: calc(12 * var(--px));
+  font-size: calc(62 * var(--px));
+  font-weight: 400;
+}
+
+.master__line--3 {
+  margin-top: calc(15 * var(--px));
+  font-size: calc(126 * var(--px));
+  font-weight: 700;
+}
+
+.master__line--4 {
+  margin-top: calc(6 * var(--px));
+  font-size: calc(76 * var(--px));
+  font-weight: 500;
+}
+
+.master__name {
+  position: absolute;
+  right: calc(180 * var(--px));
+  bottom: calc(51 * var(--px));
+  font-size: calc(23 * var(--px));
+  font-weight: 300;
+}
+
+/* ---------- Контакты ---------- */
+
+.contacts {
+  display: grid;
+  grid-template-columns: 965fr 955fr;
+  height: calc(250 * var(--px));
+  background: var(--bg-footer);
+}
+
+.contacts__info {
+  padding: calc(35 * var(--px)) 0 0 var(--pad);
+}
+
+.contacts__title {
+  display: inline-block;
+  padding-bottom: calc(19 * var(--px));
+  border-bottom: 1px solid #000;
+  font-size: calc(33 * var(--px));
+  font-weight: 400;
+}
+
+.contacts__line {
+  font-size: calc(20 * var(--px));
+}
+
+.contacts__title + .contacts__line {
+  margin-top: calc(34 * var(--px));
+}
+
+.contacts__line + .contacts__line {
+  margin-top: calc(26 * var(--px));
+}
+
+.contacts__line a {
+  text-decoration: none;
+}
+
+.contacts__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- «Твой момент» ---------- */
+
+.moment {
+  padding: calc(93 * var(--px)) calc(171 * var(--px)) calc(125 * var(--px)) var(--pad);
+}
+
+.moment__title {
+  font-size: calc(100 * var(--px));
+  font-weight: 500;
+}
+
+.moment__subtitle {
+  margin-top: calc(13 * var(--px));
+  font-size: calc(32 * var(--px));
+}
+
+.moment__panel {
+  min-height: calc(884 * var(--px));
+  margin-top: calc(64 * var(--px));
+  padding: calc(56 * var(--px)) calc(40 * var(--px));
+  background: var(--bg-mid);
+}
+
+/* ---------- Мобильная раскладка ---------- */
+
+@media (max-width: 800px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
+  }
+
+  .hero__title {
+    position: static;
+    padding: 24px var(--pad) 0;
+    font-size: 40px;
+    white-space: normal;
+    line-height: 1.1;
+  }
+
+  .hero__title-light {
+    color: #000;
+  }
+
+  .hero__actions {
+    position: static;
+    gap: 14px;
+    padding: 28px var(--pad) 32px;
+  }
+
+  .hero__photo {
+    order: 3;
+    height: 420px;
+  }
+
+  .works {
+    height: auto;
+    padding: 24px 0 36px;
+  }
+
+  .works__frame {
+    position: static;
+    width: calc(100% - 12px);
+    height: 150px;
+    padding: 8px 8px 8px 0;
+  }
+
+  .works__photo--left,
+  .works__photo--right {
+    width: 50%;
+    flex: 1 1 50%;
+  }
+
+  .works__text {
+    position: static;
+    padding: 28px var(--pad) 0;
+  }
+
+  .works__title {
+    font-size: 22px;
+    white-space: normal;
+    line-height: 1.2;
+  }
+
+  .works__subtitle {
+    margin-top: 10px;
+    font-size: 13px;
+    white-space: normal;
+    line-height: 1.3;
+  }
+
+  .master {
+    height: 440px;
+  }
+
+  .master__photo {
+    object-position: 78% center;
+  }
+
+  .master__slogan {
+    top: 24px;
+  }
+
+  .master__line--1 {
+    font-size: 22px;
+  }
+
+  .master__line--2 {
+    margin-top: 6px;
+    font-size: 28px;
+  }
+
+  .master__line--3 {
+    margin-top: 8px;
+    font-size: 56px;
+  }
+
+  .master__line--4 {
+    margin-top: 4px;
+    font-size: 34px;
+  }
+
+  .master__name {
+    right: 20px;
+    bottom: 20px;
+    font-size: 13px;
+  }
+
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .contacts__info {
+    padding: 28px var(--pad);
+  }
+
+  .contacts__title {
+    padding-bottom: 12px;
+    font-size: 20px;
+  }
+
+  .contacts__line {
+    font-size: 15px;
+  }
+
+  .contacts__title + .contacts__line {
+    margin-top: 18px;
+  }
+
+  .contacts__line + .contacts__line {
+    margin-top: 12px;
+  }
+
+  .contacts__photo {
+    height: 200px;
+  }
+
+  .moment {
+    padding: 40px var(--pad) 56px;
+  }
+
+  .moment__title {
+    font-size: 44px;
+  }
+
+  .moment__subtitle {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.3;
+  }
+
+  .moment__panel {
+    min-height: 0;
+    margin-top: 24px;
+    padding: 16px 12px 20px;
+  }
+}

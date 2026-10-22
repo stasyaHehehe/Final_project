@@ -1,0 +1,325 @@
+/* Страница «Запись» */
+
+.page--booking {
+  --pad: calc(169 * var(--px));
+  --header-h: calc(160 * var(--px));
+  --footer-h: calc(82 * var(--px));
+}
+
+.booking {
+  padding-bottom: calc(165 * var(--px));
+}
+
+.booking__title {
+  padding-top: calc(166 * var(--px));
+  padding-bottom: calc(48 * var(--px));
+  text-align: center;
+  font-size: calc(96 * var(--px));
+  font-weight: 500;
+}
+
+.booking__panel {
+  min-height: calc(876 * var(--px));
+  background: #000;
+  color: var(--light);
+}
+
+/* ---------- Форма ---------- */
+
+.booking__form {
+  width: calc(1007 * var(--px));
+  max-width: 100%;
+  margin: 0 auto;
+  padding-top: calc(153 * var(--px));
+}
+
+.field {
+  position: relative;
+  height: calc(91 * var(--px));
+  margin-bottom: calc(49 * var(--px));
+}
+
+.field__control {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0 calc(35 * var(--px));
+  border: 0;
+  border-radius: 0;
+  background: var(--bg-footer);
+  color: #000;
+  font: inherit;
+  font-size: calc(33 * var(--px));
+  font-weight: 500;
+  appearance: none;
+}
+
+.field__control::placeholder {
+  color: #000;
+  opacity: 1;
+}
+
+.field__control:focus-visible {
+  outline: calc(3 * var(--px)) solid var(--light);
+  outline-offset: calc(3 * var(--px));
+}
+
+.field__control[aria-invalid='true'] {
+  box-shadow: inset 0 calc(-4 * var(--px)) 0 #ff8f8f;
+}
+
+
+.field--picker .field__control {
+  padding-right: calc(130 * var(--px));
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.field__dots {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(9 * var(--px));
+  width: calc(110 * var(--px));
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.field__dots span {
+  width: calc(11 * var(--px));
+  height: calc(11 * var(--px));
+  border-radius: 50%;
+  background: #000;
+  transition: transform 0.15s ease;
+}
+
+.field__dots:hover span {
+  transform: scale(1.25);
+}
+
+.field__dots:focus-visible {
+  outline: calc(3 * var(--px)) solid var(--light);
+  outline-offset: calc(-6 * var(--px));
+}
+
+.picker__popover {
+  position: absolute;
+  top: calc(100% + 6 * var(--px));
+  left: 0;
+  z-index: 20;
+  width: 100%;
+  padding: calc(28 * var(--px)) calc(36 * var(--px)) calc(32 * var(--px));
+  border: 1px solid #5a5a5a;
+  background: var(--bg-mid);
+  box-shadow: 0 calc(24 * var(--px)) calc(70 * var(--px)) rgba(0, 0, 0, 0.55);
+}
+
+.picker__popover[hidden] {
+  display: none;
+}
+
+.field__error {
+  position: absolute;
+  top: calc(100% + 8 * var(--px));
+  left: 0;
+  font-size: calc(22 * var(--px));
+  color: #ff9f9f;
+}
+
+.booking__submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(413 * var(--px));
+  max-width: 100%;
+  height: calc(121 * var(--px));
+  margin: calc(122 * var(--px)) auto 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: var(--bg-footer);
+  color: #000;
+  font: inherit;
+  font-size: calc(41 * var(--px));
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.booking__submit:hover:not(:disabled) {
+  filter: brightness(1.12);
+}
+
+.booking__submit:disabled {
+  cursor: progress;
+  opacity: 0.7;
+}
+
+.booking__submit:focus-visible {
+  outline: calc(3 * var(--px)) solid var(--light);
+  outline-offset: calc(3 * var(--px));
+}
+
+.booking__status {
+  min-height: calc(24 * var(--px));
+  margin-top: calc(26 * var(--px));
+  text-align: center;
+  font-size: calc(24 * var(--px));
+  color: #ff9f9f;
+}
+
+/* ---------- Окно «Запись прошла успешно» ---------- */
+
+.modal {
+  width: calc(820 * var(--px));
+  max-width: calc(100vw - 32px);
+  padding: 0;
+  border: 0;
+  background: var(--bg);
+  color: #000;
+  font-family: var(--font);
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal__box {
+  padding: calc(64 * var(--px)) calc(70 * var(--px)) calc(60 * var(--px));
+  text-align: center;
+}
+
+.modal__title {
+  font-size: calc(46 * var(--px));
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.modal__text {
+  margin-top: calc(28 * var(--px));
+  font-size: calc(30 * var(--px));
+  line-height: 1.4;
+}
+
+.modal__button {
+  width: calc(260 * var(--px));
+  height: calc(86 * var(--px));
+  margin-top: calc(48 * var(--px));
+  border: 0;
+  background: #000;
+  color: var(--light);
+  font: inherit;
+  font-size: calc(30 * var(--px));
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.modal__button:hover {
+  filter: brightness(1.8);
+}
+
+/* ---------- Мобильная раскладка ---------- */
+
+@media (max-width: 800px) {
+  .page--booking {
+    --pad: 20px;
+    --footer-h: 64px;
+  }
+
+  .booking {
+    padding-bottom: 0;
+  }
+
+  .booking__title {
+    padding: 36px var(--pad) 28px;
+    font-size: 32px;
+    line-height: 1.1;
+  }
+
+  .booking__panel {
+    min-height: 0;
+    padding: 36px var(--pad) 48px;
+  }
+
+  .booking__form {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .field {
+    height: 56px;
+    margin-bottom: 30px;
+  }
+
+  .field__control {
+    padding: 0 16px;
+    font-size: 16px;
+  }
+
+  .field__error {
+    top: calc(100% + 4px);
+    font-size: 13px;
+  }
+
+  .booking__submit {
+    width: 100%;
+    height: 64px;
+    margin-top: 40px;
+    font-size: 20px;
+  }
+
+  .booking__status {
+    margin-top: 16px;
+    font-size: 15px;
+  }
+
+  .field--picker .field__control {
+    padding-right: 64px;
+  }
+
+  .field__dots {
+    width: 56px;
+    gap: 5px;
+  }
+
+  .field__dots span {
+    width: 7px;
+    height: 7px;
+  }
+
+  .picker__popover {
+    padding: 14px 12px 18px;
+  }
+
+  .modal {
+    width: 92vw;
+  }
+
+  .modal__box {
+    padding: 32px 22px 28px;
+  }
+
+  .modal__title {
+    font-size: 24px;
+  }
+
+  .modal__text {
+    margin-top: 16px;
+    font-size: 17px;
+  }
+
+  .modal__button {
+    width: 100%;
+    height: 56px;
+    margin-top: 28px;
+    font-size: 18px;
+  }
+}
